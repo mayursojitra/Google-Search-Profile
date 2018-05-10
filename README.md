@@ -1,6 +1,6 @@
 # Google-Search-Profile
 
-Update your social media links from plugin dashboard
+Update your social media links plugin for Wordpress
 
 # Getting Started
 
@@ -9,7 +9,7 @@ Update your social media links from plugin dashboard
 
 # Screenshots
 
-![flying-twitter-birds](https://raw.githubusercontent.com/mayursojitra/Google-Search-Profiles/master/screenshot-1.png)
+![Google Search Profile Wordpress Plugin](https://raw.githubusercontent.com/mayursojitra/Google-Search-Profile/master/screenshot-1.png)
 
 # Author
 
