@@ -1,4 +1,4 @@
-# Google-Search-Profile
+# Google Search Profile WP Plugin
 
 Update your social media links plugin for Wordpress
 
@@ -18,6 +18,12 @@ Update your social media links plugin for Wordpress
 # Blog
 
 - [The Android Mania](https://www.theandroid-mania.com/)
+
+# Hire Me
+
+- [People per hour](http://pph.me/mayursojitra)
+- [UpWork](https://www.upwork.com/freelancers/~019d3db2c3f08414b8)
+- [Contact me](mailto:hello@murait.com)
 
 
 :+1: **Happy Coding!!!**
