@@ -117,7 +117,7 @@ function gsp_add_schema() {
 			"sameAs" : [ "<?php echo $socialschema; ?>"] 
 			}
 		</script>
-    	<?
+    	<?php
     	}
     }
 }
