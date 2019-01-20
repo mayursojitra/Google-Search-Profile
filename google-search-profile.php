@@ -21,17 +21,17 @@ define( 'GSP_SCHEME_ENABLE', false);
 
 define( 'GSP_PLUGIN_NAME','google-search-profile');
 
-add_action('admin_menu', 'gsp_setting_menu');
-
 function gsp_setting_menu(){
 	add_menu_page('Google Search Profile', 'Google Profile', 'manage_options', 'google-search-profile', 'gsp_setting_page',plugins_url(GSP_PLUGIN_NAME.'/images/gsp-icon.png'));
 }
+if(function_exists('gsp_setting_menu'))
+	add_action('admin_menu', 'gsp_setting_menu');
 
 function gsp_setting_page(){
-	include "settings-page.php";
+	require_once "settings-page.php";
 }
 
-
+/* Create options while Activation of Plugin */
 function gsp_activate() {
 	
 	if(get_option( '_gsp_facebook' )=='')
@@ -56,9 +56,10 @@ function gsp_activate() {
 		update_option( '_gsp_enable', GSP_SCHEME_ENABLE);
 
 }
-register_activation_hook( __FILE__, 'gsp_activate' );
+if(function_exists('gsp_activate'))
+	register_activation_hook( __FILE__, 'gsp_activate' );
 
-
+/* Delete options while Deactivation of Plugin */
 function gsp_deactivate() {
 	
 	delete_option( '_gsp_enable' );
@@ -71,7 +72,9 @@ function gsp_deactivate() {
 	delete_option( '_gsp_linkedin' );
 
 }
-register_deactivation_hook( __FILE__, 'gsp_deactivate' );
+
+if(function_exists('gsp_deactivate'))
+	register_deactivation_hook( __FILE__, 'gsp_deactivate' );
 
 
 function gsp_add_schema() {
@@ -121,4 +124,5 @@ function gsp_add_schema() {
     	}
     }
 }
-add_action('wp_head', 'gsp_add_schema');
+if(function_exists('gsp_add_schema'))
+	add_action('wp_head', 'gsp_add_schema');
