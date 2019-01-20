@@ -10,20 +10,16 @@ Version: 1.0.1
 
 */
 
-
 define( 'GSP_VERSION', '5.0.1' );
-
 define( 'GSP_PLUGIN', __FILE__ );
-
 define( 'GSP_DIR', __DIR__ );
-
 define( 'GSP_SCHEME_ENABLE', false);
-
 define( 'GSP_PLUGIN_NAME','google-search-profile');
 
 function gsp_setting_menu(){
 	add_menu_page('Google Search Profile', 'Google Profile', 'manage_options', 'google-search-profile', 'gsp_setting_page',plugins_url(GSP_PLUGIN_NAME.'/images/gsp-icon.png'));
 }
+// Add menu action at WP-ADMIN
 if(function_exists('gsp_setting_menu'))
 	add_action('admin_menu', 'gsp_setting_menu');
 
