@@ -29,27 +29,20 @@ function gsp_setting_page(){
 
 /* Create options while Activation of Plugin */
 function gsp_activate() {
+
+	$options = array(
+		'_gsp_facebook' => 'https://www.facebook.com',
+		'_gsp_gplus' => 'https://plus.google.com',
+		'_gsp_twitter' => 'https://www.twitter.com',
+		'_gsp_instagram' => 'https://www.instagram.com',
+		'_gsp_youtube' => 'https://www.youtube.com',
+		'_gsp_linkedin' => 'https://www.linkedin.com',
+		'_gsp_enable' => GSP_SCHEME_ENABLE
+	);
 	
-	if(get_option( '_gsp_facebook' )=='')
-		update_option( '_gsp_facebook', 'https://www.facebook.com' );
-
-	if(get_option( '_gsp_gplus' )=='')
-		update_option( '_gsp_gplus', 'https://plus.google.com' );
-
-	if(get_option( '_gsp_twitter' )=='')
-		update_option( '_gsp_twitter', 'https://www.twitter.com' );
-
-	if(get_option( '_gsp_instagram' )=='')
-		update_option( '_gsp_instagram', 'https://www.instagram.com' );
-
-	if(get_option( '_gsp_youtube' )=='')
-		update_option( '_gsp_youtube', 'https://www.youtube.com' );
-
-	if(get_option( '_gsp_linkedin' )=='')
-		update_option( '_gsp_linkedin', 'https://www.linkedin.com' );
-
-	if(get_option( '_gsp_enable' )=='')
-		update_option( '_gsp_enable', GSP_SCHEME_ENABLE);
+	foreach($options as $metaKey => $metaValue)
+		if(get_option( $metaKey )=='')
+			update_option( $metaKey, $metaValue );
 
 }
 if(function_exists('gsp_activate'))
